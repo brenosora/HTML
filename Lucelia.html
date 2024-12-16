@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <title>Meu Portifólio</title>
+    <title>Menu lateral</title>
+    
+
+    <style>
+        /* Estilos básicos para visualização */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: white;
+        }
+        header #header-div{
+            margin: 0px 20px 10px 20px;
+            display: flex; 
+            align-items: center; 
+            justify-content:space-between
+        }
+
+        header div{
+            display: flex; 
+            align-items: center; 
+            justify-content:space-between
+        }
+
+        #div-search{
+            width: 400px;
+        }
+
+        #header-search {
+            height: 25px;
+            display: inline-block; width: 100%;
+            background: white; color: black; border: none; outline: none;
+            border: 1px solid #000;
+            border-radius: 1em;
+            margin: auto;
+        }
+
+        #search-icon {
+            position: relative; right: 10%;
+            fill: black; width: 24px; height: 24px;
+        }
+
+        ul{
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #333;
+            display: flex; 
+            align-items: center; 
+            justify-content:left;
+        }
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+
+        }
+        li a:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div id="header-div">        
+        <h1>FAST REPAIR</h1>
+        <div id="div-search">
+            <input type="search" id="header-search" placeholder=" Pesquisa..." />
+            <svg id="search-icon" viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>   
+        </div>
+        <img src="contact-mail.png" alt="cotacte-me" width="4%">
+        
+    </div>
+</header>
+
+<main>
+    <nav>
+        <ul>
+            <li><a class="active" href="#home">Sobre Nós</a></li>
+            <li><a href="#news">Serviços</a></li>
+            <li><a href="#contact">Contato</a></li>
+            <li><a href="#about">Reparações Multimarcas</a></li>
+          </ul>
+    </nav>
+    <section id="About">
+        <h2>Sobre Nós</h2>
+        <p>A Fast Repair nasceu em 2002 e é a empresa líder do mercado nacional na Reparação de telemóveis, tablets, computadores e smartwatches..</p>
+        <p>A Faste Repair trabalha com técnicos especializados que efetua as suas reparações em cerca de 20 minutos.</p>
+
+    <section id="Home">
+        <h2>Serviços</h2>
+        <p>Substituíção de ecrã</p>
+        <p>Substituíção de baterias</p>
+        <p>Substituíção de vidro traseiro</p>
+        <p>Substituíção de componentes</p>
+        <p>Calibração dos equipamentos</p>
+    </section>
+
+    
+    <section>
+        <h2>Contato</h2>
+        <p>LinkedIn: <a href="https://www.fastrepair.pt."></a></p>
+    </section>
+</main>
+
+
+<section>
+    <h2>Reparações Multimarcas</h2>
+
+
+    <article>
+        <h3>Apple</h3>
+        <h3>Samsung</h3>
+        <h3>Huawei</h3>
+        <h3>Xiaomi</h3>
+        <h3>Oppo</h3>
+        <h3>TCL</h3>
+        <h3>Alcatel</h3>
+        <h3>Motorola</h3>
+        <p>Reparamos todas as marcas e fabricantes</p>
+    </article>
+
+
+    <article>
+        <h3>Olá novamente</h3>
+        <p>Agora já estamos a codificar o 2º artigo</p>
+    </article>
+</section>
+
+
+<aside>
+    <h3>Documentação Técnica</h3>
+    <ul>
+        <li><a href="#">Softwares e Manuais de Ferramentas, Diagnostico & Testes </a></li>
+        <li><a href="#">Manual de usuário </a></li>
+    </ul>
+</aside>
+
+
+<footer>
+    <p>&copy; 2024 Engenharia Informática | 1ºano. Todos os direitos reservados.</p>
+</footer>
+
+
+</body>
+</html>
