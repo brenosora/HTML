@@ -72,6 +72,70 @@
         li a:hover {
             background-color: #111;
         }
+
+        .navbar{
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #333;
+            display: flex; 
+            align-items: center; 
+            justify-content:left;
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+
+        }
+
+        .dropdown {
+        float: left;
+        overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        }
+
+        .navbar .dropdown:hover .dropbtn {
+        background-color: red;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content h3, .dropdown-content h3 a{
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+
+        .dropdown-content h3:hover {
+        background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
     </style>
 </head>
 
@@ -93,31 +157,72 @@
 
 <main>
     <nav>
+        <!--
         <ul>
             <li><a class="active" href="#home">Sobre Nós</a></li>
             <li><a href="#news">Serviços</a></li>
             <li><a href="#contact">Contato</a></li>
             <li><a href="#about">Reparações Multimarcas</a></li>
-          </ul>
+        </ul>
+        -->
+                
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">Sobre Nós 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <h3>A Fast Repair nasceu em 2002 e é a empresa líder do mercado nacional na Reparação de telemóveis, tablets, computadores e smartwatches..<br></h3>
+                    <h3>A Faste Repair trabalha com técnicos especializados que efetua as suas reparações em cerca de 20 minutos.</h3>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Serviços 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <h3>Substituíção de ecrã</h3>
+                    <h3>Substituíção de baterias</h3>
+                    <h3>Substituíção de vidro traseiro</h3>
+                    <h3>Substituíção de componentes</h3>
+                    <h3>Calibração dos equipamentos</h3>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Contato 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <h3><a href="https://www.google.com">LinkedIn</a></h3>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Reparações Multimarcas 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <h3>Apple</h3>
+                    <h3>Samsung</h3>
+                    <h3>Huawei</h3>
+                    <h3>Xiaomi</h3>
+                    <h3>Oppo</h3>
+                    <h3>TCL</h3>
+                    <h3>Alcatel</h3>
+                    <h3>Motorola</h3>
+                </div>
+            </div> 
+        </div>
+                
     </nav>
-    <section id="About">
-        <h2>Sobre Nós</h2>
-        <p>A Fast Repair nasceu em 2002 e é a empresa líder do mercado nacional na Reparação de telemóveis, tablets, computadores e smartwatches..</p>
-        <p>A Faste Repair trabalha com técnicos especializados que efetua as suas reparações em cerca de 20 minutos.</p>
-
     <section id="Home">
         <h2>Serviços</h2>
-        <p>Substituíção de ecrã</p>
-        <p>Substituíção de baterias</p>
-        <p>Substituíção de vidro traseiro</p>
-        <p>Substituíção de componentes</p>
-        <p>Calibração dos equipamentos</p>
+
     </section>
 
     
     <section>
         <h2>Contato</h2>
-        <p>LinkedIn: <a href="https://www.fastrepair.pt."></a></p>
+        <a href="https://www.google.com">LinkedIn</a>
     </section>
 </main>
 
