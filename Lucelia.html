@@ -2,16 +2,17 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portifólio</title>
     <title>Menu lateral</title>
-    
 
     <style>
         /* Estilos básicos para visualização */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
+
         }
 
         header{
@@ -22,7 +23,9 @@
             margin: 0px 20px 10px 20px;
             display: flex; 
             align-items: center; 
-            justify-content:space-between
+            justify-content:space-between;
+            flex-wrap: wrap;
+
         }
 
         header div{
@@ -32,7 +35,9 @@
         }
 
         #div-search{
-            width: 400px;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 10px;
         }
 
         #header-search {
@@ -80,6 +85,37 @@
             display: flex; 
             align-items: center; 
             justify-content:left;
+        }
+
+        .div-form{
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        input[type=text], input[type=tel], input[type=email], textarea {
+            width: 28%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+            input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+            background-color: #45a049;
         }
 
         .navbar a {
@@ -136,6 +172,63 @@
         .dropdown:hover .dropdown-content {
         display: block;
         }
+
+        /*PARTE DO SLIDER*/
+        * {box-sizing: border-box;}
+            body {font-family: Verdana, sans-serif;}
+            .mySlides {display: none;}
+            img {vertical-align: middle;}
+
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+
+            .active {
+                background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+
     </style>
 </head>
 
@@ -213,54 +306,97 @@
             </div> 
         </div>        
     </nav>
+<br>
 
+<!--PARTE DOS SLIDES, OS BOTÕES PARA MUDAR DE IMAGEM E ATIVANDO AS FUNÇÕES JS-->
+ <section class="slider">
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="IMG 1.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="IMG 2.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="IMG 3.jpg" style="width:100%">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+    </div>
+    <br>
+    <br>
+    <div class="div-form">
+        <h2>CONTACTE-ME</h2>
+        <form action="javascript:valida()">
+            <input type="text" placeholder="Nome" required="required" name="nome" />
+          
+            <input type="tel" placeholder="Telefone" required="required" name="fone" />
+
+            <input type="email"  placeholder="Email" required="required" name="email" />
+            <br>
+
+            <textarea id="mensagem" name='mensagem' placeholder="Sua mensagem..."></textarea>
+        
+          <input type="submit" value="Submit">
+        </form>
+    </div>
     
-    <section id="Home">
-        <h2>Serviços</h2>
+    <script>
+        /*FUNÇÕES PARA ALTERAR A IMAGEM COM O CLICK E COM O TEMPO*/
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-    </section>
+        setInterval(function(){
+            plusSlides(1)
+        },10000);
 
-    
-    <section>
-        <h2>Contato</h2>
-        <a href="https://www.google.com">LinkedIn</a>
-    </section>
-</main>
+        function plusSlides(n) {
+         showSlides(slideIndex += n);
+        }
 
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
 
-<section>
-    <h2>Reparações Multimarcas</h2>
+        /*FUNÇÃO PARA ALTERAR AS IMAGENS, AQUI ESCONDEREMOS AS FOTOS E EXIBIREMOS SOMENTE UMA*/
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
 
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";
+        
+        }
 
-    <article>
-        <h3>Apple</h3>
-        <h3>Samsung</h3>
-        <h3>Huawei</h3>
-        <h3>Xiaomi</h3>
-        <h3>Oppo</h3>
-        <h3>TCL</h3>
-        <h3>Alcatel</h3>
-        <h3>Motorola</h3>
-        <p>Reparamos todas as marcas e fabricantes</p>
-    </article>
-
-
-    <article>
-        <h3>Olá novamente</h3>
-        <p>Agora já estamos a codificar o 2º artigo</p>
-    </article>
+        function valida(){
+            let x = document.getElementById("mensagem").value;
+            if(x == ''){
+                alert('Mensagem está vazia!');
+            }else{
+                alert('Mensagem enviada!');
+            }
+        }
+    </script>
 </section>
-
+<br>
 <footer>
     <aside>
         <h3>Documentação Técnica</h3>
         <ul>
-            <li><a href="#">Softwares e Manuais de Ferramentas, Diagnostico & Testes </a></li>
-            <li><a href="#">Manual de usuário </a></li>
+            <li><a >Softwares e Manuais de Ferramentas, Diagnostico & Testes </a></li>
+            <li><a >Manual de usuário </a></li>
         </ul>
     </aside>
     <p>&copy; 2024 Engenharia Informática | 1ºano. Todos os direitos reservados.</p>
 </footer>
-
 </body>
 </html>
